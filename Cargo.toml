@@ -12,5 +12,9 @@ polars = { version = "0.42.0", features = [
   "lazy",
   "dtype-datetime",
   "strings",
+  "parquet",
+  # "csv",
+  "cum_agg",
 ] }
 serde = { version = "1.0.209", features = ["derive"] }
+plotters = "0.3.6"
