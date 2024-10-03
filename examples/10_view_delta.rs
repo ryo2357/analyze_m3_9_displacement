@@ -44,7 +44,7 @@ fn main() -> Result<()>{
 
     println!("{}",df );
     println!("最大変動：{:.3}、3σ：{:.3}", max_abs_delta,std_delta * 3.0);
-
+    let caption:String = format!("前回シールとの差  最大絶対値:{:.3}、3σ：{:.3}", max_abs_delta,std_delta * 3.0);
 
     let offset= Duration::hours(OFFSET_HOURS);
     let datetimes: Vec<DateTime<Local>> = df
@@ -67,7 +67,7 @@ fn main() -> Result<()>{
     root.fill(&WHITE)?;
 
     let mut chart = ChartBuilder::on(&root)
-        .caption("変動のプロット", ("Meiryo", 24).into_font())
+        .caption(caption, ("Meiryo", 24).into_font())
         .margin(10)
         .x_label_area_size(40)
         .y_label_area_size(60)
